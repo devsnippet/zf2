@@ -1,0 +1,12 @@
+<?php
+$form->setAttribute('action', $this->url('clients/search'))->prepare();
+
+echo $this->form()->openTag($form);
+
+//$product = $form->get('search');
+
+//echo $this->formRow();
+echo $this->formCollection($form);
+
+
+echo $this->form()->closeTag();

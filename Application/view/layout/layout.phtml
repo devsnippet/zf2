@@ -1,0 +1,82 @@
+<?php echo $this->doctype() . "\n"; ?>
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Zend Framework Tutorial');
+?>
+
+<html>
+ <head>
+<?php
+$this->headLink()->appendStylesheet($this->basePath('/css/styles.css'));
+$this->headLink()->appendStylesheet($this->basePath('/css/menu.css'));
+//$this->headLink()->appendStylesheet('http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css');
+?>
+
+<?php
+echo $this->headMeta();
+echo $this->headTitle();
+echo $this->headStyle();
+echo $this->headLink();
+echo $this->headScript();
+?>
+
+  <?php /*
+    if ($this->JQuery()->isEnabled())
+    echo $this->JQuery()
+    ->uiEnable()
+    ->setLocalPath($this->basePath('/js/jquery/jquery.min.js'))
+    ->setUiLocalPath($this->basePath('/js/jquery/jquery-ui.min.js'))
+    ->addStylesheet('/js/jquery/jquery-ui-1.7.3.custom.css');
+   */
+  ?>
+
+
+ </head>
+ <body class="claro">
+  <div id="page">
+   <div id="header"> &nbsp;</div>
+
+
+   <!--  <div id=navigation>
+             <ul>
+<?php
+//echo $this->navigation('Navigation')->menu()->setPartial(array('partial/menu.phtml','default'))->setUlClass('nav');
+//      echo $this->navigation('Navigation')->menu()->setPartial(array('partial/menu.phtml','default'));
+?>
+                                                         </ul>
+                                                           </div>
+   -->
+
+
+<div>
+<?php
+//echo $this->navigation()->menu()->setPartial(array('menu.phtml', 'default'))->render();
+echo $this->navigation('Navigation')->menu()->render();
+?>
+</div>
+
+   <div id="wrap">
+
+    <div id="content">
+      <?php echo $this->layout()->content; ?>
+    </div>
+
+
+
+   </div>
+
+  </div>
+
+
+  <div id="footer">
+
+   <div style="float:right; margin:0px 0px; font-family: Arial,Helvetica,sans-serif;font-size: 11px; text-decoration: none;">
+    2010-2012 &copy;<a href="mailto:billing@telesystems.ua">&nbsp;ООО «Телесистемы Украины»</a>
+   </div>
+
+
+
+  </div>
+ </body>
+</html>

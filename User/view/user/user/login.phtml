@@ -1,3 +1,5 @@
+<br><br>
+
 <?php
 //$form->setAttribute('action', $this->url('clients/index'))->prepare();
 //echo $this->form()->openTag($form);
@@ -13,8 +15,8 @@
 
 
 $form = $this->form;
-$form->setAttribute('action', $this->url('login/process',array('action'     => 'authenticate',)
-));
+$form->setAttribute('action', $this->url('login/process',array('action'     => 'authenticate',)));
+$form->setAttribute('class', 'form-signin');
 $form->prepare();
 //print_r($form);
 

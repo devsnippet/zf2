@@ -14,7 +14,8 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\AdapterInterface;
+//use Zend\Authentication\Adapter\AdapterInterface;
+use User\Services\Authentication as AuthServ;
 
 class Module implements AutoloaderProviderInterface {
 
@@ -112,9 +113,12 @@ class Module implements AutoloaderProviderInterface {
        //$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
        //$dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter, 'users', 'user_name', 'pass_word', 'MD5(?)');
 
-       $authService = new AuthenticationService();
+       //$authService = new AuthenticationService();
+       //$authService = new AuthenticationService();
        //$authService->setAdapter($dbTableAuthAdapter);
        //$authService->setAdapter($sm->get('ZDBA'));
+       $authService=new AuthServ();
+       //$authService->setAdapter(auth);
        //$authService->setStorage($sm->get('SanAuth\Model\MyAuthStorage'));
 
        return $authService;

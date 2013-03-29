@@ -7,7 +7,7 @@ return array(
         ),
         'resources' => array(
             'allow' => array(
-                // 'user' => array(
+                //'user' => array(
               'User\Controller\User'=>array(
                     'login' => 'guest',
                     'all'   => 'member'
@@ -15,10 +15,10 @@ return array(
               'Clients\Controller\Index'=>array(
                 'index'=>'guest',
                 'search'=>'guest',
-                'add'=>'guest'
+                'add'=>'member'
               ),
               'Debitors\Controller\Index'=>array(
-                'search'=>'member'
+                'search'=>'guest'
 
               )
 

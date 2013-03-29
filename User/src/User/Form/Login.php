@@ -34,6 +34,7 @@ class Login{
     /**
      * @Annotation\Type("Zend\Form\Element\Submit")
      * @Annotation\Attributes({"value":"Submit"})
+     * @Annotation\Attributes({"class":"btn"})
      */
     public $submit;
 }

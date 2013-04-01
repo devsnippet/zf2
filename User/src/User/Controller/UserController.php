@@ -35,7 +35,9 @@ use User\Form\Login as LoginForm;
  * @license   http://binware.org/license/index/type:new-bsd New BSD License
  */
 class UserController extends AbstractActionController {
-
+private $authservice;
+private $form;
+  
  public function getAuthService() {
   if (!$this->authservice) {
    $this->authservice = $this->getServiceLocator()->get('AuthService');

@@ -145,8 +145,8 @@ class Module implements AutoloaderProviderInterface,ConsoleUsageProviderInterfac
         //description command
         return array(
             'show_version' => 'Get current version',
-            'db_migrations_migrate [<version>]' => 'Execute migrate',
-            'db_migrations_generate' => 'Generate new migration class'
+            'ver [<version>]' => 'Execute ver',
+
         );
     }
 

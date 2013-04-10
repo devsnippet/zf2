@@ -17,7 +17,13 @@ use Zend\Authentication\AuthenticationService;
 //use Zend\Authentication\Adapter\AdapterInterface;
 use User\Services\Authentication as AuthServ;
 
-class Module implements AutoloaderProviderInterface {
+
+use Zend\Console\Adapter\AdapterInterface as Console;
+use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
+use Zend\ModuleManager\Feature\ConsoleBannerProviderInterface;
+
+class Module implements AutoloaderProviderInterface,ConsoleUsageProviderInterface,
+    ConsoleBannerProviderInterface {
 
  public function getAutoloaderConfig() {
   return array(
@@ -129,5 +135,20 @@ class Module implements AutoloaderProviderInterface {
     )
   );
  }
+
+    public function getConsoleBanner(Console $console){
+        return 'User Module';
+    }
+
+
+ public function getConsoleUsage(Console $console){
+        //description command
+        return array(
+            'show_version' => 'Get current version',
+            'db_migrations_migrate [<version>]' => 'Execute migrate',
+            'db_migrations_generate' => 'Generate new migration class'
+        );
+    }
+
 
 }

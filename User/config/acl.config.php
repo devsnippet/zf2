@@ -8,6 +8,9 @@ return array(
         'resources' => array(
             'allow' => array(
                 //'user' => array(
+	      'User\Controller\Console'=>array(
+		  'all'=>'guest'
+	      ),
               'User\Controller\User'=>array(
                     'login' => 'guest',
                     'all'   => 'member'
@@ -18,7 +21,8 @@ return array(
                 'add'=>'member'
               ),
               'Debitors\Controller\Index'=>array(
-                'search'=>'guest'
+                //'search'=>'guest'
+                'all'=>'guest'
 
               )
 

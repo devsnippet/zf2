@@ -3,9 +3,9 @@
 return array(
   'di' => array(
     'instance' => array(
-      'alias' => array(
-        'user' => 'User\Controller\UserController'
-      ),
+//      'alias' => array(
+//        'user' => 'User\Controller\UserController'
+//      ),
       'user' => array(
         'parameters' => array(
           'broker' => 'Zend\Mvc\Controller\PluginBroker'
@@ -22,6 +22,7 @@ return array(
           'config' => include __DIR__ . '/acl.config.php'
         )
       ),
+      
       /*      'User\Controller\Plugin\UserAuthentication' => array(
         'parameters' => array(
         //'authAdapter' => 'Zend\Authentication\Adapter\DbTable'
@@ -101,8 +102,9 @@ return array(
   //////////////////////////////////////////////////////////////////////
   'controllers' => array(
     'invokables' => array(
-      'User\Controller\User' => 'User\Controller\UserController',
-      'User\Controller\Success' => 'SanAuth\Controller\SuccessController'
+      'User\Controller\User' =>    'User\Controller\UserController',
+      //'User\Controller\Success' => 'SanAuth\Controller\SuccessController',
+      'User\Controller\Console' => 'User\Controller\ConsoleController'
     ),
   ),
   'router' => array(
@@ -119,6 +121,24 @@ return array(
           )
         )
       )
+
+    )
+  ),
+
+  'console'=> array(
+    'router'=>array(
+	'routes'=>array(
+	    'show_version'=>array(
+		'type'=> 'simple',
+		'options'=>array(
+		    'route'=>'show_version [--env]',
+		    'defaults'=>array(
+			'controller'=>'User\Controller\Console',
+			'action'=>'getVersion'
+		    )
+		)
+	    )
+	)
     )
   ),
   'view_manager' => array(

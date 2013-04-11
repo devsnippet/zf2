@@ -1,14 +1,9 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of ConsoleController
+ * Description of newController
  *
  * @author AShvager
+ * @data 11.04.2013
  */
 namespace User\Controller;
 

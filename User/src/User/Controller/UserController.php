@@ -19,7 +19,7 @@ namespace User\Controller;
  * @uses Zend\Mvc\Controller\ActionController
  * @uses User\Form\Login
  */
-use Zend\Mvc\Controller\ActionController;
+//use Zend\Mvc\Controller\ActionController;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Form\Annotation\AnnotationBuilder;
 use User\Form\Login as LoginForm;
@@ -37,7 +37,7 @@ use User\Form\Login as LoginForm;
 class UserController extends AbstractActionController {
 private $authservice;
 private $form;
-  
+
  public function getAuthService() {
   if (!$this->authservice) {
    $this->authservice = $this->getServiceLocator()->get('AuthService');

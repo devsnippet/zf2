@@ -22,7 +22,6 @@ return array(
           'config' => include __DIR__ . '/acl.config.php'
         )
       ),
-      
       /*      'User\Controller\Plugin\UserAuthentication' => array(
         'parameters' => array(
         //'authAdapter' => 'Zend\Authentication\Adapter\DbTable'
@@ -30,36 +29,36 @@ return array(
         'authAdapter' => 'Zend\Db\Adapter\AdapterServiceFactory'
         )
         ), */
-/*      'Zend\Authentication\Adapter\DbTable' => array(
+      /*      'Zend\Authentication\Adapter\DbTable' => array(
         'parameters' => array(
-          //'zendDb' => 'Zend\Db\Adapter\Adapter',
-          'zendDb' => 'Zend\Db\Adapter\AdapterInterface',
-          'tableName' => 'contact',
-          'identityColumn' => 'email',
-          'credentialColumn' => 'password',
-          'credentialTreatment' => 'SHA1(CONCAT(?, "secretKey"))'
-      )),
-      'Zend\Db\Adapter\Adapter' => array(
+        //'zendDb' => 'Zend\Db\Adapter\Adapter',
+        'zendDb' => 'Zend\Db\Adapter\AdapterInterface',
+        'tableName' => 'contact',
+        'identityColumn' => 'email',
+        'credentialColumn' => 'password',
+        'credentialTreatment' => 'SHA1(CONCAT(?, "secretKey"))'
+        )),
+        'Zend\Db\Adapter\Adapter' => array(
         'parameters' => array(
-          'driver' => 'Zend\Db\Adapter\Driver\Pdo\Pdo',
+        'driver' => 'Zend\Db\Adapter\Driver\Pdo\Pdo',
         ),
-      ),
-      'Zend\Db\Adapter\Driver\Pdo\Pdo' => array(
-        'parameters' => array(
-          'connection' => 'Zend\Db\Adapter\Driver\Pdo\Connection',
         ),
-      ),
-      'Zend\Db\Adapter\Driver\Pdo\Connection' => array(
+        'Zend\Db\Adapter\Driver\Pdo\Pdo' => array(
         'parameters' => array(
-          // 'connectionInfo' => array(
-          'connectionParameters' => array(
-            'dsn' => "sqlite:dbname=OSS;host=10.1.2.250",
-            'username' => 'dev',
-            'password' => 'ljk,bntcm!',
-          //    'driver_options' => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''),
-          ),
+        'connection' => 'Zend\Db\Adapter\Driver\Pdo\Connection',
         ),
-      ),*/
+        ),
+        'Zend\Db\Adapter\Driver\Pdo\Connection' => array(
+        'parameters' => array(
+        // 'connectionInfo' => array(
+        'connectionParameters' => array(
+        'dsn' => "sqlite:dbname=OSS;host=10.1.2.250",
+        'username' => 'dev',
+        'password' => 'ljk,bntcm!',
+        //    'driver_options' => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''),
+        ),
+        ),
+        ), */
       /*                    'zendDb' => 'Zend\Db\Adapter\Mysqli',
         'tableName' => 'users',
         'identityColumn' => 'email',
@@ -80,7 +79,6 @@ return array(
         )
         ),
        */
-
       'Zend\Mvc\Controller\PluginLoader' => array(
         'parameters' => array(
           'map' => array(
@@ -102,7 +100,7 @@ return array(
   //////////////////////////////////////////////////////////////////////
   'controllers' => array(
     'invokables' => array(
-      'User\Controller\User' =>    'User\Controller\UserController',
+      'User\Controller\User' => 'User\Controller\UserController',
       //'User\Controller\Success' => 'SanAuth\Controller\SuccessController',
       'User\Controller\Console' => 'User\Controller\ConsoleController'
     ),
@@ -121,24 +119,21 @@ return array(
           )
         )
       )
-
     )
   ),
-
-  'console'=> array(
-    'router'=>array(
-	'routes'=>array(
-	    'show_version'=>array(
-		'type'=> 'simple',
-		'options'=>array(
-		    'route'=>'show_version [--env]',
-		    'defaults'=>array(
-			'controller'=>'User\Controller\Console',
-			'action'=>'getVersion'
-		    )
-		)
-	    )
-	)
+  'console' => array(
+    'router' => array(
+      'routes' => array(
+        'ver' => array(
+          'options' => array(
+            'route' => 'user [--version=] [--pass=] [--config=] [-d]',
+            'defaults' => array(
+              'controller' => 'User\Controller\Console',
+              'action' => 'getParam'
+            )
+          )
+        )
+      )
     )
   ),
   'view_manager' => array(

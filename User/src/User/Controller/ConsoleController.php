@@ -6,13 +6,14 @@
  * @data 11.04.2013
  */
 namespace User\Controller;
-
 use Zend\Mvc\Controller\AbstractActionController;
 class ConsoleController extends AbstractActionController{
  //put your code here
- public function getVersionAction(){
-
-  return  sprintf('version %4.2f',1.2);
+ public function getParamAction(){
+  $request = $this->getRequest();
+  $ver =$request->getParam('version');
+  //print_r($request);
+  return  sprintf('version %4.2f',$ver);
  }
 }
 

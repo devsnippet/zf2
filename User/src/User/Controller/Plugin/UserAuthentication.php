@@ -38,7 +38,7 @@ use Zend\Db\Adapter\AdapterServiceFactory as AuthAdapter;
  * @license    http://binware.org/license/index/type:new-bsd New BSD License
  */
 //class UserAuthentication extends AbstractPlugin
-class UserAuthentication
+class UserAuthentication extends AbstractPlugin  
 {
     /**
      * @var AuthAdapter

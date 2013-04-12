@@ -16,14 +16,11 @@ use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\Authentication\AuthenticationService;
 //use Zend\Authentication\Adapter\AdapterInterface;
 use User\Services\Authentication as AuthServ;
-
-
 use Zend\Console\Adapter\AdapterInterface as Console;
 use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
 use Zend\ModuleManager\Feature\ConsoleBannerProviderInterface;
 
-class Module implements AutoloaderProviderInterface,ConsoleUsageProviderInterface,
-    ConsoleBannerProviderInterface {
+class Module implements AutoloaderProviderInterface, ConsoleUsageProviderInterface, ConsoleBannerProviderInterface {
 
  public function getAutoloaderConfig() {
   return array(
@@ -118,12 +115,11 @@ class Module implements AutoloaderProviderInterface,ConsoleUsageProviderInterfac
       'AuthService' => function($sm) {
        //$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
        //$dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter, 'users', 'user_name', 'pass_word', 'MD5(?)');
-
        //$authService = new AuthenticationService();
        //$authService = new AuthenticationService();
        //$authService->setAdapter($dbTableAuthAdapter);
        //$authService->setAdapter($sm->get('ZDBA'));
-       $authService=new AuthServ();
+       $authService = new AuthServ();
        //$authService->setAdapter(auth);
        //$authService->setStorage($sm->get('SanAuth\Model\MyAuthStorage'));
 
@@ -136,19 +132,16 @@ class Module implements AutoloaderProviderInterface,ConsoleUsageProviderInterfac
   );
  }
 
-    public function getConsoleBanner(Console $console){
-        return 'User Module';
-    }
+ public function getConsoleBanner(Console $console) {
+  return 'User Module';
+ }
 
-
- public function getConsoleUsage(Console $console){
-        //description command
-        return array(
-            'show_version' => 'Get current version',
-            'ver [<version>]' => 'Execute ver',
-
-        );
-    }
-
+ public function getConsoleUsage(Console $console) {
+  //description command
+  return array(
+    'user --vesion' => 'Get current version',
+    'user -d' => 'debug session',
+  );
+ }
 
 }

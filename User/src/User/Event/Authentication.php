@@ -61,7 +61,7 @@ class Authentication
         if ($userAuth->hasIdentity()) {
             $user = $userAuth->getIdentity();
             $role = 'member'; //@todo - Get role from user!
-        }
+        } 
 
 
         $routeMatch = $event->getRouteMatch();

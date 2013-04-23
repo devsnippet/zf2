@@ -5,17 +5,20 @@ return array(
 	     array(
          'label' => 'Клиенты',
          'route' => 'clients',
+	 //'module'=> 'Clients',
          'action'=> 'index',
          'pages' => array(
                      array(
                          'label' => 'Добавить клиента',
-                         'route' => 'clients',
-                         'action'=> 'add'
+			 //'module'=> 'Clients',
+                         'route' => 'clients/add',
+                         //'action'=> 'add'
                      ),
                      array(
                          'label' => 'Найти клиента',
-                         'route' => 'clients',
-                         'action'=> 'search'
+                         'route' => 'clients/search',
+			 //'controller'=>'Index',
+                         //'action'=> 'search'
                      ),
        ),
 

@@ -21,10 +21,10 @@ return array(
           ),
         ),
       ),
-      'clients' => array(
-        'type' => 'Literal',
-        'options' => array('route' => '/clients','defaults' => array('controller' => 'Clients\Controller\Index','action' => 'index')),
-      ),
+//      '/clients' => array(
+//        'type' => 'Literal',
+//        'options' => array('route' => '/clients','defaults' => array('controller' => 'Clients\Controller\Index','action' => 'index')),
+//      ),
 
       'debitors' => array(
         'type' => 'Literal',

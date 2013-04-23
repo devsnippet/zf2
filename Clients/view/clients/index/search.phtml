@@ -1,5 +1,7 @@
 <?php
-$form->setAttribute('action', $this->url('clients/search'))->prepare();
+if (isset($form)){
+$form->setAttribute('action', $this->url('clients'))->prepare();
+$form->setAttribute('class', 'form-inline');
 
 echo $this->form()->openTag($form);
 
@@ -10,3 +12,6 @@ echo $this->formCollection($form);
 
 
 echo $this->form()->closeTag();
+}
+?>
+search

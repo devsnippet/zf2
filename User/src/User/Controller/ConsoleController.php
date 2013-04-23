@@ -1,20 +1,17 @@
 <?php
-/**
- * Description of newController
- *
- * @author AShvager
- * @data 11.04.2013
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
+
 namespace User\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
+
 class ConsoleController extends AbstractActionController{
- //put your code here
- public function getParamAction(){
-  $request = $this->getRequest();
-  $ver =$request->getParam('version');
-  //print_r($request);
-  return  sprintf('version %4.2f',$ver);
- }
+  
+  public function getVersionAction(){
+    return sprintf("Current version %04.2f\n", 01.02);
+  }
 }
 
-?>

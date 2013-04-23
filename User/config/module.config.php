@@ -79,14 +79,14 @@ return array(
         )
         ),
        */
-      'Zend\Mvc\Controller\PluginLoader' => array(
+/*      'Zend\Mvc\Controller\PluginLoader' => array(
         'parameters' => array(
           'map' => array(
             'userAuthentication' => 'User\Controller\Plugin\UserAuthentication'
           )
         )
-      ),
-      'Zend\View\PhpRenderer' => array(
+      ),*/
+/*      'Zend\View\PhpRenderer' => array(
         'parameters' => array(
           'options' => array(
             'script_paths' => array(
@@ -94,14 +94,15 @@ return array(
             )
           )
         )
-      )
+
+      )*/
     )
   ),
   //////////////////////////////////////////////////////////////////////
   'controllers' => array(
     'invokables' => array(
       'User\Controller\User' => 'User\Controller\UserController',
-      //'User\Controller\Success' => 'SanAuth\Controller\SuccessController',
+      // 'User\Controller\Success' => 'SanAuth\Controller\SuccessController',
       'User\Controller\Console' => 'User\Controller\ConsoleController'
     ),
   ),
@@ -112,19 +113,38 @@ return array(
         'options' => array(
           'route' => '/login',
           'defaults' => array(
-            //'controller' => 'user',
-            //'action' => 'login',
+            // 'controller' => 'user',
+            // 'action' => 'login',
             'controller' => 'User\Controller\User',
             'action' => 'login',
           )
-        )
+        ),
+
+/*
+	'may_terminate' => true,
+         'child_routes' => array(
+            'default' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/[:controller[/:action]]',
+                    'constraints' => array(
+                        'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ),
+                    'defaults' => array(
+                    ),
+                ),
+            ),
+          )
+*/
+
       )
     )
   ),
   'console' => array(
     'router' => array(
       'routes' => array(
-        'ver' => array(
+        'user-parameters' => array(
           'options' => array(
             'route' => 'user [--version=] [--pass=] [--config=] [-d]',
             'defaults' => array(

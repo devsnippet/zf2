@@ -65,8 +65,9 @@ class Authentication
 
 
         $routeMatch = $event->getRouteMatch();
-        $controller = $routeMatch->getParam('controller');
-        $action     = $routeMatch->getParam('action');
+	echo "M->". $controller = $routeMatch->getParam('modules');
+        echo "C->".$controller = $routeMatch->getParam('controller');
+        echo "A->".$action     = $routeMatch->getParam('action');
 
         if (!$acl->hasResource($controller)) {
             throw new \Exception('ACL:Resource ' . $controller . ' not defined');

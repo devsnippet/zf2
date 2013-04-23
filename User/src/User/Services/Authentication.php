@@ -14,6 +14,7 @@ class Authentication implements AdapterInterface {
         }
 */        
         function authenticate() {
+                exit;
                 $this->db = Zend_Db_Table_Abstract::getDefaultAdapter();
                 //$em = Zend_Registry::get('em');
                 $sql="select USERID,FNAME,LNAME,STATUS from SYS\$GETCUST(?,?)";
@@ -74,15 +75,17 @@ class Authentication implements AdapterInterface {
                                         $returnObject->{$key} = $returnColumn;
                                 //}
                         }
+//echo $returnObject;exit;
            return $returnObject;
            
            
            //return $this->identity;
    }    
-
+   
  public function hasIdentity(){
     return false;
  }
+
         
 } 
 

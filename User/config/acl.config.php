@@ -21,12 +21,6 @@ return array(
           'all' => 'guest',
           //'add' => 'guest'
         ),
-        'clients_index' => array(
-          //'index' => 'guest',
-          'all' => 'guest',
-          //'add' => 'guest'
-        ),
-
         'Debitors\Controller\Index' => array(
           //'search'=>'guest'
           'all' => 'guest'

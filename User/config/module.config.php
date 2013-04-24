@@ -6,11 +6,12 @@ return array(
 //      'alias' => array(
 //        'user' => 'User\Controller\UserController'
 //      ),
-      'user' => array(
+      /*      'user' => array(
         'parameters' => array(
-          'broker' => 'Zend\Mvc\Controller\PluginBroker'
+        'broker' => 'Zend\Mvc\Controller\PluginBroker'
         )
-      ),
+        ),
+       */
       'User\Event\Authentication' => array(
         'parameters' => array(
           'userAuthenticationPlugin' => 'User\Controller\Plugin\UserAuthentication',
@@ -22,80 +23,80 @@ return array(
           'config' => include __DIR__ . '/acl.config.php'
         )
       ),
-      /*      'User\Controller\Plugin\UserAuthentication' => array(
-        'parameters' => array(
-        //'authAdapter' => 'Zend\Authentication\Adapter\DbTable'
-        // 'authAdapter' => 'Zend\Authentication\Adapter\AdapterInterface'
-        'authAdapter' => 'Zend\Db\Adapter\AdapterServiceFactory'
-        )
-        ), */
-      /*      'Zend\Authentication\Adapter\DbTable' => array(
-        'parameters' => array(
-        //'zendDb' => 'Zend\Db\Adapter\Adapter',
-        'zendDb' => 'Zend\Db\Adapter\AdapterInterface',
-        'tableName' => 'contact',
-        'identityColumn' => 'email',
-        'credentialColumn' => 'password',
-        'credentialTreatment' => 'SHA1(CONCAT(?, "secretKey"))'
-        )),
-        'Zend\Db\Adapter\Adapter' => array(
-        'parameters' => array(
-        'driver' => 'Zend\Db\Adapter\Driver\Pdo\Pdo',
-        ),
-        ),
-        'Zend\Db\Adapter\Driver\Pdo\Pdo' => array(
-        'parameters' => array(
-        'connection' => 'Zend\Db\Adapter\Driver\Pdo\Connection',
-        ),
-        ),
-        'Zend\Db\Adapter\Driver\Pdo\Connection' => array(
-        'parameters' => array(
-        // 'connectionInfo' => array(
-        'connectionParameters' => array(
-        'dsn' => "sqlite:dbname=OSS;host=10.1.2.250",
-        'username' => 'dev',
-        'password' => 'ljk,bntcm!',
-        //    'driver_options' => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''),
-        ),
-        ),
-        ), */
-      /*                    'zendDb' => 'Zend\Db\Adapter\Mysqli',
-        'tableName' => 'users',
-        'identityColumn' => 'email',
-        'credentialColumn' => 'password',
-        'credentialTreatment' => 'SHA1(CONCAT(?, "secretKey"))'
+    /*      'User\Controller\Plugin\UserAuthentication' => array(
+      'parameters' => array(
+      //'authAdapter' => 'Zend\Authentication\Adapter\DbTable'
+      // 'authAdapter' => 'Zend\Authentication\Adapter\AdapterInterface'
+      'authAdapter' => 'Zend\Db\Adapter\AdapterServiceFactory'
+      )
+      ), */
+    /*      'Zend\Authentication\Adapter\DbTable' => array(
+      'parameters' => array(
+      //'zendDb' => 'Zend\Db\Adapter\Adapter',
+      'zendDb' => 'Zend\Db\Adapter\AdapterInterface',
+      'tableName' => 'contact',
+      'identityColumn' => 'email',
+      'credentialColumn' => 'password',
+      'credentialTreatment' => 'SHA1(CONCAT(?, "secretKey"))'
+      )),
+      'Zend\Db\Adapter\Adapter' => array(
+      'parameters' => array(
+      'driver' => 'Zend\Db\Adapter\Driver\Pdo\Pdo',
+      ),
+      ),
+      'Zend\Db\Adapter\Driver\Pdo\Pdo' => array(
+      'parameters' => array(
+      'connection' => 'Zend\Db\Adapter\Driver\Pdo\Connection',
+      ),
+      ),
+      'Zend\Db\Adapter\Driver\Pdo\Connection' => array(
+      'parameters' => array(
+      // 'connectionInfo' => array(
+      'connectionParameters' => array(
+      'dsn' => "sqlite:dbname=OSS;host=10.1.2.250",
+      'username' => 'dev',
+      'password' => 'ljk,bntcm!',
+      //    'driver_options' => array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''),
+      ),
+      ),
+      ), */
+    /*                    'zendDb' => 'Zend\Db\Adapter\Mysqli',
+      'tableName' => 'users',
+      'identityColumn' => 'email',
+      'credentialColumn' => 'password',
+      'credentialTreatment' => 'SHA1(CONCAT(?, "secretKey"))'
 
-        )
-        ),
-        'Zend\Db\Adapter\Mysqli' => array(
-        'parameters' => array(
-        'config' => array(
-        'host' => 'localhost',
-        'username' => 'username',
-        'password' => 'password',
-        'dbname' => 'dbname',
-        'charset' => 'utf-8'
-        )
-        )
-        ),
-       */
-/*      'Zend\Mvc\Controller\PluginLoader' => array(
-        'parameters' => array(
-          'map' => array(
-            'userAuthentication' => 'User\Controller\Plugin\UserAuthentication'
-          )
-        )
-      ),*/
-/*      'Zend\View\PhpRenderer' => array(
-        'parameters' => array(
-          'options' => array(
-            'script_paths' => array(
-              'user' => __DIR__ . '/../views'
-            )
-          )
-        )
+      )
+      ),
+      'Zend\Db\Adapter\Mysqli' => array(
+      'parameters' => array(
+      'config' => array(
+      'host' => 'localhost',
+      'username' => 'username',
+      'password' => 'password',
+      'dbname' => 'dbname',
+      'charset' => 'utf-8'
+      )
+      )
+      ),
+     */
+    /*      'Zend\Mvc\Controller\PluginLoader' => array(
+      'parameters' => array(
+      'map' => array(
+      'userAuthentication' => 'User\Controller\Plugin\UserAuthentication'
+      )
+      )
+      ), */
+    /*      'Zend\View\PhpRenderer' => array(
+      'parameters' => array(
+      'options' => array(
+      'script_paths' => array(
+      'user' => __DIR__ . '/../views'
+      )
+      )
+      )
 
-      )*/
+      ) */
     )
   ),
   //////////////////////////////////////////////////////////////////////
@@ -113,31 +114,27 @@ return array(
         'options' => array(
           'route' => '/login',
           'defaults' => array(
-            // 'controller' => 'user',
-            // 'action' => 'login',
             'controller' => 'User\Controller\User',
             'action' => 'login',
           )
         ),
-
-/*
-	'may_terminate' => true,
-         'child_routes' => array(
-            'default' => array(
-                'type'    => 'Segment',
-                'options' => array(
-                    'route'    => '/[:controller[/:action]]',
-                    'constraints' => array(
-                        'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                    ),
-                    'defaults' => array(
-                    ),
-                ),
-            ),
-          )
-*/
-
+      /*
+        'may_terminate' => true,
+        'child_routes' => array(
+        'default' => array(
+        'type'    => 'Segment',
+        'options' => array(
+        'route'    => '/[:controller[/:action]]',
+        'constraints' => array(
+        'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+        'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+        ),
+        'defaults' => array(
+        ),
+        ),
+        ),
+        )
+       */
       )
     )
   ),

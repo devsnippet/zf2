@@ -23,13 +23,13 @@ return array(
 
         'may_terminate' => true,
         'child_routes' => array(
-          'update' => array(
+          'checkuser' => array(
             'type' => 'Literal',
             'options' => array(
-              'route' => '/update',
+              'route' => '/checkuser',
               'defaults' => array(
                 'controller' => 'Checkuser\Controller\Checkuser',
-                'action' => 'update',
+                'action' => 'checkuser',
               ),
             ),
           ),

@@ -1,5 +1,6 @@
 <?php
-//
+//Использование аннотаций (Annotations)
+//http://zf2.com.ua/doc/161
 namespace Checkuser\Form;
 
 use Zend\Form\Annotation;
@@ -19,8 +20,9 @@ class Checkuser{
 
     /**
      * @Annotation\Type("Zend\Form\Element\Text")
-     * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Options({"label":"Статус абонента:"})
+     * @Annotation\Attributes({"disabled":true})
+     * @Annotation\AllowEmpty()
      */
     public $status;
 

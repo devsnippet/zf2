@@ -17,7 +17,7 @@ return array(
           'route' => '/checkuser',
           'defaults' => array(
             'controller' => 'Checkuser\Controller\Checkuser',
-            'action' => 'Checkuser',
+            'action' => 'checkuser',
           )
         ),
       /*
@@ -57,7 +57,7 @@ return array(
   ),
   'view_manager' => array(
     'template_path_stack' => array(
-      'User' => __DIR__ . '/../view',
+      'Checkuser' => __DIR__ . '/../view',
     ),
   ),
 );

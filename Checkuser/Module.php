@@ -7,7 +7,7 @@
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
- 
+
 namespace Checkuser;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
@@ -20,7 +20,7 @@ use Zend\Console\Adapter\AdapterInterface as Console;
 use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
 use Zend\ModuleManager\Feature\ConsoleBannerProviderInterface;
 
-class Module implements AutoloaderProviderInterface, ConsoleUsageProviderInterface, ConsoleBannerProviderInterface {
+class Module  implements AutoloaderProviderInterface{
 
  public function getAutoloaderConfig() {
   return array(

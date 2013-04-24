@@ -22,7 +22,7 @@ namespace Checkuser\Controller;
 //use Zend\Mvc\Controller\ActionController;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Form\Annotation\AnnotationBuilder;
-use User\Form\Login as LoginForm;
+use Checkuser\Form\Checkuser as CheckuserForm;
 
 /**
  * User Controller Class
@@ -41,22 +41,27 @@ private $form;
   if (!$this->authservice) {
    $this->authservice = $this->getServiceLocator()->get('AuthService');
   }
-  
+
   return $this->authservice;
  }
 
  /**
   * Index Action
   */
- public function indexAction() {
-  //@todo - Implement indexAction
+ public function checkuserAction() {
+        $form       = $this->getForm();
+        return array(
+            'form'      => $form,
+            'messages'  => $this->flashmessenger()->getMessages()
+        );
+
  }
 
  public function getForm() {
   if (!$this->form) {
-   $login = new LoginForm();
+   $checkuser = new CheckuserForm();
    $builder = new AnnotationBuilder();
-   $this->form = $builder->createForm($login);
+   $this->form = $builder->createForm($checkuser);
   }
 
   return $this->form;
@@ -90,7 +95,7 @@ private $form;
  }
 */
 
-     public function loginAction()
+     public function updateAction()
     {
         //if already login, redirect to success page
         if ($this->getAuthService()->hasIdentity()){

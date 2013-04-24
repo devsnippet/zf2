@@ -1,6 +1,6 @@
 <?php
 //
-namespace User\Form;
+namespace Checkuser\Form;
 
 use Zend\Form\Annotation;
 /**
@@ -13,21 +13,22 @@ class Checkuser{
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Required({"required":"true" })
      * @Annotation\Filter({"name":"StripTags"})
-     * @Annotation\Options({"label":"Username:"})
+     * @Annotation\Options({"label":"Логин абонента:"})
      */
-    public $username;
+    public $login;
 
     /**
-     * @Annotation\Type("Zend\Form\Element\Password")
-     * @Annotation\Required({"required":"true" })
+     * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Filter({"name":"StripTags"})
-     * @Annotation\Options({"label":"Password:"})
+     * @Annotation\Options({"label":"Статус абонента:"})
      */
-    public $password;
+    public $status;
+
+
 
     /**
      * @Annotation\Type("Zend\Form\Element\Submit")
-     * @Annotation\Attributes({"value":"Submit"})
+     * @Annotation\Attributes({"value":"Проверить"})
      * @Annotation\Attributes({"class":"btn"})
      */
     public $submit;

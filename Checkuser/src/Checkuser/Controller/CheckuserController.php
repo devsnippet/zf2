@@ -50,8 +50,16 @@ class CheckuserController extends AbstractActionController {
   $form = $this->getForm();
   $request=$this->getRequest();
 
-  if ($request->isPost() && $form->isValid($request->getPost()->toArray())){
-   $messages='ssssssssssss';
+  if ($request->isPost()){
+   $form->setData($request->getPost());
+   if ($form->isValid()){
+    //$this->messages=array('ssssssssssss');
+    $login=$request->getPost('login');
+    $form->get('status')->setAttribute('value','включен');
+    $form->get('submit')->setAttribute('value','Включить');
+    $this->flashMessenger()->addMessage('Логин:'.$login);
+
+   }
   }
 
 

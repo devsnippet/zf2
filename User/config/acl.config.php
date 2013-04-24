@@ -23,6 +23,9 @@ return array(
         'Debitors\Controller\Index' => array(
           //'search'=>'guest'
           'all' => 'guest'
+        ),
+        'Checkuser\Controller\Checkuser'=>array(
+          'all'=>'guest'
         )
       )
     )

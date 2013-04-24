@@ -1,5 +1,4 @@
 <?php
-
 /**
  * File for CheckUser Controller Class
  *

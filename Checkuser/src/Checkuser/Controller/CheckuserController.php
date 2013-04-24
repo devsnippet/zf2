@@ -1,16 +1,13 @@
 <?php
 
 /**
- * File for User Controller Class
+ * File for CheckUser Controller Class
  *
- * @category  User
- * @package   User_Controller
- * @author    Marco Neumann <webcoder_at_binware_dot_org>
- * @copyright Copyright (c) 2011, Marco Neumann
+ * @category  CheckUser
+ * @package   CheckUser_Controller
+ * @author    Shvager Alexander <shvager_at_mail_dot_ru>
+ * @copyright Copyright (c) 2013, Shvager Alexander
  * @license   http://binware.org/license/index/type:new-bsd New BSD License
- */
-/**
- * @namespace
  */
 
 namespace Checkuser\Controller;

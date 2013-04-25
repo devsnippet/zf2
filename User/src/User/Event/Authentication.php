@@ -61,13 +61,13 @@ class Authentication
         if ($userAuth->hasIdentity()) {
             $user = $userAuth->getIdentity();
             $role = 'member'; //@todo - Get role from user!
-        } 
+        }
 
 
         $routeMatch = $event->getRouteMatch();
-	echo "M->". $controller = $routeMatch->getParam('modules');
-        echo "C->".$controller = $routeMatch->getParam('controller');
-        echo "A->".$action     = $routeMatch->getParam('action');
+	      $controller = $routeMatch->getParam('modules');
+        $controller = $routeMatch->getParam('controller');
+        $action     = $routeMatch->getParam('action');
 
         if (!$acl->hasResource($controller)) {
             throw new \Exception('ACL:Resource ' . $controller . ' not defined');

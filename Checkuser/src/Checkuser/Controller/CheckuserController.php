@@ -54,8 +54,9 @@ public function exchangeArray($data)
   */
  public function checkuserAction() {
   $form = $this->getForm();
-  //$entityuser=new EUser();
-  $form->bind(new EUser());
+  $entityuser=new EUser();
+  $form->bind($entityuser);
+
 
   $request=$this->getRequest();
   $form->setData($request->getPost());
@@ -66,9 +67,12 @@ public function exchangeArray($data)
     //$this->exchangeArray($form->getData());
     $login=$request->getPost('login');
     $form->get('status')->setAttribute('value','включен');
+
     //$form->get('submit')->setAttribute('value','Включить');
     $this->flashMessenger()->addMessage('Логин:'.$login);
-    //return $this->redirect()->toRoute('checkuser');
+    //$form->bind($form->get());
+     //var_dump($entityuser);
+    return $this->redirect()->toRoute('checkuser');
    }
 
   }

@@ -19,6 +19,7 @@ namespace Checkuser\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Form\Annotation\AnnotationBuilder;
 use Checkuser\Form\Checkuser as CheckuserForm;
+use Checkuser\Entity\User as EUser;
 
 /**
  * User Controller Class
@@ -41,24 +42,35 @@ class CheckuserController extends AbstractActionController {
 
   return $this->authservice;
  }
+public function exchangeArray($data)
+    {
+        $this->login     = (isset($data['login']))     ? $data['login']     : null;
+        $this->status = (isset($data['status'])) ? $data['status'] : null;
+
+    }
 
  /**
   * Index Action
   */
  public function checkuserAction() {
   $form = $this->getForm();
-  $request=$this->getRequest();
+  //$entityuser=new EUser();
+  $form->bind(new EUser());
 
+  $request=$this->getRequest();
+  $form->setData($request->getPost());
   if ($request->isPost()){
-   $form->setData($request->getPost());
+
    if ($form->isValid()){
     //$this->messages=array('ssssssssssss');
+    //$this->exchangeArray($form->getData());
     $login=$request->getPost('login');
     $form->get('status')->setAttribute('value','включен');
-    $form->get('submit')->setAttribute('value','Включить');
+    //$form->get('submit')->setAttribute('value','Включить');
     $this->flashMessenger()->addMessage('Логин:'.$login);
-
+    //return $this->redirect()->toRoute('checkuser');
    }
+
   }
 
 
